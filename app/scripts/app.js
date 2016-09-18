@@ -12,6 +12,7 @@ angular
   .module('nerdreflexApp', [
     'ngAnimate',
     'ngCookies',
+    'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
