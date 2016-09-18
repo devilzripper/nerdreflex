@@ -1,84 +1,171 @@
 <!doctype html>
-<html>
-  <head>
+<html ng-app="nerdreflexApp" ng-controller="MainCtrl as main">
+<head>
     <meta charset="utf-8">
-    <title></title>
+    <title ng-bind="'NerdReflex - ' + $root.title">NerdReflex</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css"/>
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="bower_components/fotorama/fotorama.css"/>
     <!-- endbower -->
     <!-- endbuild -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="http://720kb.github.io/csshelper/assets/ext/src/helper.css">
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
-  <body ng-app="nerdreflexApp">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+</head>
+<body>
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+<md-toolbar>
+    <h3>
+        <md-fab-actions class="md-toolbar-tools">
+                <span class="header-one" ng-href="/#home">
+                    <a href="#/">NerdReflex</a>
+                </span>
+                <span class="header-two" ng-cloak>
+                    <p>{{ $root.title }}</p>
+                </span>
+            <md-button aria-label="home" class="md-icon-button" ng-href="#/home">
+                <md-icon class=material-icons>home</md-icon>
+            </md-button>
+            <md-button aria-label="sets" class="md-icon-button" ng-href="#/sets">
+                <md-icon class=material-icons>library_music</md-icon>
+            </md-button>
+            <md-button aria-label="gallery" class="md-icon-button" ng-href="#/gallery">
+                <md-icon class=material-icons>collections</md-icon>
+            </md-button>
+            <md-button aria-label="events" class="md-icon-button" ng-href="#/events">
+                <md-icon class=material-icons>date_range</md-icon>
+            </md-button>
+            <md-button aria-label="biography" class="md-icon-button" ng-href="#/biography">
+                <i class="material-icons">library_books</i>
+            </md-button>
+            <md-button aria-label="about" class="md-icon-button" ng-href="#/about">
+                <md-icon class=material-icons>face</md-icon>
+            </md-button>
 
-            <a class="navbar-brand" href="#/">nerdreflex</a>
-          </div>
+        </md-fab-actions>
+    </h3>
 
-          <div class="collapse">
+</md-toolbar>
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+<md-fab-speed-dial md-direction="down" class="md-scale share-button">
+    <md-fab-trigger>
+        <md-button aria-label="share" class="md-fab md-warn">
+            <md-icon class="material-icon">share</md-icon>
+        </md-button>
+    </md-fab-trigger>
 
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
+    <md-fab-actions>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
+        <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="images/icons/facebook_square.svg" aria-label="Facebook"></md-icon>
+        </md-button>
 
+        <md-button aria-label="Instagram" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="images/icons/instagram_round.svg" aria-label="Instagram"></md-icon>
+        </md-button>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        <md-button aria-label="Mixcloud" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="images/icons/mixcloud.svg" aria-label="Mixcloud"></md-icon>
+        </md-button>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+        <md-button aria-label="Soundcloud" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="images/icons/soundcloud.svg" class="soundcloud" aria-label="Soundcloud"></md-icon>
+        </md-button>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+    </md-fab-actions>
+</md-fab-speed-dial>
+<!--<md-toolbar md-scroll-shrink>-->
+<!--<md-fab-actions class="md-toolbar-tools">-->
+<!--<span class="header-one">NerdReflex</span>-->
+<!--<span class="header-two">{{ pageName }}</span>-->
+<!--<md-button aria-label="home" class="md-icon-button"  ng-href="#/home">-->
+<!--<md-icon class=material-icons >home</md-icon>-->
+<!--</md-button>-->
+<!--<md-button aria-label="sets" class="md-icon-button"  ng-href="#/sets">-->
+<!--<md-icon class=material-icons >library_music</md-icon>-->
+<!--</md-button>-->
+<!--<md-button aria-label="gallery" class="md-icon-button" ng-href="#/gallery">-->
+<!--<md-icon class=material-icons >collections</md-icon>-->
+<!--</md-button>-->
+<!--<md-button aria-label="events" class="md-icon-button" ng-href="#/events">-->
+<!--<md-icon class=material-icons >date_range</md-icon>-->
+<!--</md-button>-->
+<!--<md-button aria-label="about" class="md-icon-button" ng-href="#/about">-->
+<!--<md-icon class=material-icons >face</md-icon>-->
+<!--</md-button>-->
+<!--</md-fab-actions>-->
+<!--</md-toolbar>-->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
+<div class="container" ng-class="animation">
+    <div ng-view="" class="view"></div>
+</div>
+
+<div class="footer">
+    <iframe width="100%" height="60" ng-if="!showMixes"
+            src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2FNerdReflex%2F&hide_cover=1&mini=1&light=1"
+            frameborder="0"></iframe>
+</div>
+</div>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+    !function (A, n, g, u, l, a, r) {
+        A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+            (A[l].q = A[l].q || []).push(arguments)
+        }, A[l].l = +new Date, a = n.createElement(g),
+                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="bower_components/angular-slick/dist/slick.js"></script>
+<script src="bower_components/fotorama/fotorama.js"></script>
+<script src="bower_components/angular-fotorama/angular-fotorama.js"></script>
+<script src="bower_components/angular-socialshare/dist/angular-socialshare.min.js"></script>
+<script src="bower_components/material-calendar/dist/angular-material-calendar.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/about.js"></script>
+<script src="scripts/controllers/gallery.js"></script>
+<script src="scripts/controllers/sets.js"></script>
+<script src="scripts/controllers/events.js"></script>
+<script src="scripts/controllers/biography.js"></script>
+<!-- endbuild -->
 </body>
 </html>

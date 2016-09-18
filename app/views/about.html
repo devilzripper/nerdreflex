@@ -1,1 +1,98 @@
-<p>This is the about view.</p>
+<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Markus Wagner</span>
+            <span class="md-subhead">Software Entwickler / DJ aus Leidenschaft</span>
+            <md-content class="content-card">
+                <p class="short-biography">
+                    My Name is Markus Wagner, also known as NerdReflex, born on the 08.06.1993 in Waiblingen, Germany.
+                    <br>
+                    I am working as a software engineer at a local company and live in Hochberg near Stuttgart and
+                    started DJing 7 years ago.
+                    Music and especially electronic music fascinated me since I was a teenager! It changed my mind and
+                    perspective to something better in so many ways. <br>
+                    <br>
+                </p>
+
+                <p class="adress-text">
+                    Webmaster
+                    <br>
+                    Markus Wagner
+                    <br>
+                    Comburgweg 18
+                    <br>
+                    71686 Hochberg
+                </p>
+            </md-content>
+        </md-card-title-text>
+        <md-card-title-media>
+            <div class="md-media-lg card-media profile-pictre">
+            </div>
+        </md-card-title-media>
+    </md-card-title>
+
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button href="mailto:markuswagner93@gmail.com">Mail</md-button>
+        <md-button>Gigmit</md-button>
+    </md-card-actions>
+</md-card>
+<div>
+    <button class="btn btn-medium font-bold"
+            socialshare
+            socialshare-provider="email"
+            socialshare-body="Hello! http://720kb.net"
+            socialshare-to="test@test.ing"
+            socialshare-cc="test@test.ing"
+            socialshare-media="https://www.google.it/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+            socialshare-subject="Very important email"
+            socialshare-popup-height="300"
+            socialshare-popup-width="400">
+        <i class="fa fa-envelope"></i> Share via Email
+    </button>
+</div>
+<div class="separator30"></div>
+<div>
+    <button class="btn btn-medium font-bold"
+            socialshare
+            socialshare-provider="facebook"
+            socialshare-type="sharer"
+            socialshare-text="720kb"
+            socialshare-url="http://720kb.net"
+            socialshare-popup-height="300"
+            socialshare-popup-width="400"
+            socialshare-trigger="click">
+        <i class="fa fa-facebook"></i> Share on Facebook (sharer)
+    </button>
+</div>
+<div class="separator30"></div>
+<div>
+    <button class="btn btn-medium font-bold"
+            socialshare
+            socialshare-provider="xing"
+            socialshare-url="http://720kb.net"
+            socialshare-follow="https://www.xing.com/news/pages/marketing-werbung-44"
+            socialshare-popup-height="300"
+            socialshare-popup-width="400"
+            socialshare-trigger="click">
+        <i class="fa fa-xing"></i> Share on Xing
+    </button>
+</div>
+<div class="separator30"></div>
+<div>
+    <button class="btn btn-medium font-bold"
+            socialshare
+            socialshare-provider="flipboard"
+            socialshare-url="http://720kb.net"
+            socialshare-text="720kb"
+            socialshare-popup-height="300"
+            socialshare-popup-width="400"
+            socialshare-trigger="click">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RTdDRUUzMzM4NDZGMTFFNUJBMENDMjlDRDUzNkNBOTciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RTdDRUUzMzQ4NDZGMTFFNUJBMENDMjlDRDUzNkNBOTciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFN0NFRTMzMTg0NkYxMUU1QkEwQ0MyOUNENTM2Q0E5NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFN0NFRTMzMjg0NkYxMUU1QkEwQ0MyOUNENTM2Q0E5NyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Phc0s7MAAAFISURBVHja7FlBaoRAEOwOufg1/yJ49TmevfsCwTf4AMWTJ1FQcaLGhtnMrpBNMuuYapApWge77LKnR1kpRS7bGzlu7wKYeR1cSQeLcvQMuKQldRkJgQAIgAAIgABaiW9bkiTK87xtSddWxQ2XZUlt2xr+A7yNwzBQFEVshcAavO/7W/8kPYngJXgax9HwP8IyxnFsLwOf9+db8AOs+2y9A0rtj1LtJlgk8tV/cP3NPGTAtQz8zzJ6JKGu62g99vJIWsmkIAgoz3PDr++wbBFQewlkkYHgaZpoqemGf8VVVXHTNFiJX1qFztILPV2F0MxdTUK/XoXCMOSiKO5Oquv6NAQeWpZlfxKodQmdfUd22NtgSwkJOSShpzLQ9z2laXr33DzPVgmwtsl26l/TEjfjwxYIgAAIgAAIXIoAOxQ3G60EJPQi+xBgAPSbOleIl6pHAAAAAElFTkSuQmCC"
+             width="18" valign="middle"/>
+        Share on Flipboard
+    </button>
+</div>
+<div class="separator30"></div>
+<div class="separator100"></div>
+</div>
+</div>
